@@ -19,6 +19,7 @@ from django.urls import path
 # added by grimmer
 from django.conf.urls import url
 from . import view
+from .view import ChartView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +29,8 @@ urlpatterns = [
     # https://stackoverflow.com/questions/47947673/is-it-better-to-use-path-or-url-in-urls-py-for-django-2-0
     # path('', view.hello, name="index"),
     path('', view.hello, name="index"),
+
+    path('chart/', ChartView.as_view()),
+
+
 ]
