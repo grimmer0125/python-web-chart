@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>I come from template!!</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            console.log("current url:", window.location.href);
+
+            //需要timer去refresh當前網址, 如果not live mode, 就不用了
+            setTimeout(function(){
+               window.location.reload(true);
+           }, 5*1000); //5s 
+
+        </script>
+        <h1>Hello World!</h1>
+        <em>{{ current_time }}</em>
+    </body>
+</html>

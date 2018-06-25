@@ -24,10 +24,7 @@ def hello(request):
     })
 
 
-# TODO:
-# 1. embed plotly charts in html
-# 2. embed customized menu items <- using react possible?
-
+# Embed plotly charts in html
 # ref: https://stackoverflow.com/a/38334121/7354486
 # or embed this ChartView in normal funciton viewsself.
 # g = Graph() context = g.get_context_data()

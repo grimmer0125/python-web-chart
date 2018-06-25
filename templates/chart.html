@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>I come from template!!</title>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <style>
+    body {
+      background-color: lightyellow;
+    }
+
+    em {
+      color: LightSeaGreen;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Plotly Python Chart!</h1>
+
+  {% if graph %}
+  <div style="width:600;height:500">
+    {{ graph|safe }}
+  </div>
+  {% endif %}
+
+  <script type="text/javascript">
+    // TODO: 1. automatical reload timer
+    console.log("current url:", window.location.href);
+    //需要timer去refresh當前網址, 如果not live mode, 就不用了
+    //  setTimeout(function(){
+    //     window.location.reload(true);
+    // }, 5*1000); //5s
+    // 2. add some customized menus for Chart, using react possible?
+  </script>
+
+  <div id="app">
+  <script type="text/babel">
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            Custom menus part by using Reactjs, when users choose different menus,
+            a different chart url request will be sent
+          </div>
+        );
+      }
+    }
+
+    // ReactDOM.render("Hello", document.getElementById('app'));
+    ReactDOM.render(<App />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>
