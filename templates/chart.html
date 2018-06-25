@@ -2,11 +2,16 @@
 <html>
 
 <head>
+  {% load static %}
+
   <title>I come from template!!</title>
 
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui-react/0.81.1/semantic-ui-react.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
 
   <style>
     body {
@@ -20,7 +25,6 @@
 </head>
 
 <body>
-
   <h1>Plotly Python Chart!</h1>
 
   {% if graph %}
@@ -30,6 +34,7 @@
   {% endif %}
 
   <script type="text/javascript">
+
     // TODO: 1. automatical reload timer
     console.log("current url:", window.location.href);
     //需要timer去refresh當前網址, 如果not live mode, 就不用了
@@ -40,21 +45,8 @@
   </script>
 
   <div id="app">
-  <script type="text/babel">
-    class App extends React.Component {
-      render() {
-        return (
-          <div>
-            Custom menus part by using Reactjs, when users choose different menus,
-            a different chart url request will be sent
-          </div>
-        );
-      }
-    }
+  <script src="{% static 'app.js' %}" type="text/babel"></script>
 
-    // ReactDOM.render("Hello", document.getElementById('app'));
-    ReactDOM.render(<App />, document.getElementById('app'));
-  </script>
 </body>
 
 </html>
