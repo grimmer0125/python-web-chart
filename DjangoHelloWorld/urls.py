@@ -26,5 +26,6 @@ urlpatterns = [
     # added by grimmer
     # url(r'^$', view.hello),
     # https://stackoverflow.com/questions/47947673/is-it-better-to-use-path-or-url-in-urls-py-for-django-2-0
+    # path('', view.hello, name="index"),
     path('', view.hello, name="index"),
 ]
