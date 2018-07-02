@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Plotly + Flask</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% else %}
+  <h1>Plotly + Flask</h1>
+{% endif %}
+
+{% if graph %}
+<div style="width:600;height:500">
+  {{ graph|safe }}
+</div>
+{% endif %}
