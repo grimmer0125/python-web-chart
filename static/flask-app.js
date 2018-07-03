@@ -24,14 +24,16 @@ class App extends React.Component {
 
     this.setState({ selectedMode: value });
 
-    // if (value === "mode1") {
-    //   // reload mode1 html
-    //   window.location.href = "http://127.0.0.1:8000/chart/mode1"
-    //
-    // } else if (value === "mode2") {
-    //   // reload mode2 html
-    //   window.location.href = "http://127.0.0.1:8000/chart/mode2"
-    // }
+    if (value === "mode1") {
+      console.log('switch file1');
+      // reload mode1 html
+      window.location.href = "http://127.0.0.1:5000/chart/mode1"
+
+    } else if (value === "mode2") {
+      console.log('switch file2');
+      // reload mode2 html
+      window.location.href = "http://127.0.0.1:5000/chart/mode2"
+    }
   }
 
   render() {
