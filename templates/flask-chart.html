@@ -1,13 +1,23 @@
-<!doctype html>
-<title>Plotly + Flask</title>
-{% if name %}
-  <h1>Hello {{ name }}!</h1>
-{% else %}
-  <h1>Plotly + Flask</h1>
-{% endif %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>I come from template!!</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> plotly + flask !</h1>
 
-{% if graph %}
-<div style="width:600;height:500">
-  {{ graph|safe }}
-</div>
-{% endif %}
+        {% if graph %}
+        <div style="width:600;height:500">
+          {{ graph|safe }}
+        </div>
+        {% endif %}
+    </body>
+</html>
