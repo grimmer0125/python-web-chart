@@ -19,7 +19,7 @@ from django.urls import path
 # added by grimmer
 from django.conf.urls import url
 from . import view
-from .view import ChartView, ChartView2
+from .view import ChartView, ChartView2, ChartView3, ChartView4, ChartView5, ChartView6
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,4 +32,8 @@ urlpatterns = [
 
     path('chart/mode1', ChartView.as_view()),
     path('chart/mode2', ChartView2.as_view()),
+    path('chart/mode3', ChartView3.as_view()),
+    path('chart/mode4', ChartView4.as_view()),
+    path('chart/mode5', ChartView5.as_view()),
+    path('chart/mode6', ChartView6.as_view())
 ]

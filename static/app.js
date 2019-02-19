@@ -2,9 +2,16 @@
  * This is a React web application (client side rendering)
  */
 
+/**
+tag of drop down manual
+*/
 const modeOptions = [
-  { value: 'mode1', text: 'live mode (last 30 mins)' },
-  { value: 'mode2', text: '6/25' }
+  { value: 'mode1', text: 'random number' },
+  { value: 'mode2', text: '4 hour' },
+  { value: 'mode3', text: '12 hour' },
+  { value: 'mode4', text: '1 day' },
+  { value: 'mode5', text: '7 days' },
+  { value: 'mode6', text: '10 days' }
 ];
 
 const Dropdown = semanticUIReact.Dropdown;
@@ -27,10 +34,21 @@ class App extends React.Component {
     if (value === "mode1") {
       // reload mode1 html
       window.location.href = "http://127.0.0.1:8000/chart/mode1"
-
     } else if (value === "mode2") {
       // reload mode2 html
       window.location.href = "http://127.0.0.1:8000/chart/mode2"
+    } else if (value === "mode3") {
+      // reload mode3 html
+      window.location.href = "http://127.0.0.1:8000/chart/mode3"
+    } else if (value === "mode4") {
+      // reload mode4 html
+      window.location.href = "http://127.0.0.1:8000/chart/mode4"
+    } else if (value === "mode5") {
+      // reload mode5 html
+      window.location.href = "http://127.0.0.1:8000/chart/mode5"
+    } else if (value === "mode6") {
+      // reload mode6 html
+      window.location.href = "http://127.0.0.1:8000/chart/mode6"
     }
   }
 
