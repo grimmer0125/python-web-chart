@@ -6,6 +6,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <small>
+          {/* development or production */}
+          You are running this application in <b>{process.env.NODE_ENV}</b>{" "}
+          mode.
+        </small>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code> src / App.js </code> and save to reload.{" "}
