@@ -1,52 +1,137 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    {% load static %}
 
-<head>
-  {% load static %}
+    <title>I come from template!!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
-  <title>I come from template!!</title>
+    <!-- <script src="https://unpkg.com/react@^16.2.0/umd/react.production.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/react-dom@^16.2.0/umd/react-dom.production.min.js"></script> -->
 
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/babel-standalone@latest/babel.min.js"
+    ></script>
 
-  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui-react/0.81.1/semantic-ui-react.min.js"></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+    <!-- Style dependencies -->
+    <link
+      crossorigin
+      href="https://unpkg.com/normalize.css@^7.0.0"
+      rel="stylesheet"
+    />
+    <!-- Blueprint stylesheets -->
+    <link
+      crossorigin
+      href="https://unpkg.com/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      crossorigin
+      href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css"
+      rel="stylesheet"
+    />
 
-  <style>
-    body {
-      background-color: lightyellow;
-    }
+    <link
+      crossorigin
+      href="https://unpkg.com/@blueprintjs/datetime@3.13.0/lib/css/blueprint-datetime.css"
+      rel="stylesheet"
+    />
 
-    em {
-      color: LightSeaGreen;
-    }
-  </style>
-</head>
+    <!-- 3.15.2 -->
 
-<body>
-  <h1>Plotly Python Chart!</h1>
+    <!-- <style>
+      body {
+        background-color: lightyellow;
+      }
 
-  <div id="app">
-  </div>
-  <script src="{% static 'app.js' %}" type="text/babel"></script>
+      em {
+        color: LightSeaGreen;
+      }
+    </style> -->
+  </head>
 
-  {% if graph %}
-  <div style="width:600;height:500">
-    {{ graph|safe }}
-  </div>
-  {% endif %}
+  <body>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+    ></script>
 
-  <script type="text/javascript">
-    // TODO: 1. automatical reload timer
-    console.log("current url:", window.location.href);
-    // if it is not in live mode, ignore 
-    //  setTimeout(function(){
-    //     window.location.reload(true);
-    // }, 5*1000); //5s
-    // 2. add some customized menus for Chart, using react possible?
-  </script>
+    <!-- Blueprint dependencies -->
+    <script crossorigin src="https://unpkg.com/classnames@^2.2"></script>
+    <script crossorigin src="https://unpkg.com/dom4@^1.8"></script>
+    <!-- tslib really work ? -->
+    <script crossorigin src="https://unpkg.com/tslib@^1.9.0"></script>
 
-</body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-transition-group@^2.2.1/dist/react-transition-group.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/popper.js@^1.14.1/dist/umd/popper.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-popper@1.3.3/dist/index.umd.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/resize-observer-polyfill@^1.5.0"
+    ></script>
+    <!-- Blueprint packages (note: icons script must come first) -->
+    <script
+      crossorigin
+      src="https://unpkg.com/@blueprintjs/icons@^3.4.0"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/@blueprintjs/core@^3.10.0"
+    ></script>
+    <!-- <script
+      crossorigin
+      src="https://cdn.jsdelivr.net/npm/@blueprintjs/datetime@3.13.0/dist/datetime.bundle.js"
+    ></script> -->
 
+    <script
+      crossorigin
+      src="https://unpkg.com/@blueprintjs/datetime@^3.4.0"
+    ></script>
+
+    <!-- <script
+    crossorigin
+    src="https://cdn.jsdelivr.net/npm/@blueprintjs/datetime@3.4.0/dist/datetime.bundle.js"
+  ></script> -->
+
+    <!-- <h1>Plotly Python Chart!</h1> -->
+
+    <div id="app"></div>
+    <script src="{% static 'title.jsx' %}" type="text/babel"></script>
+    <script src="{% static 'app.jsx' %}" type="text/babel"></script>
+
+    {% if graph %}
+    <div style="width:600;height:500">
+      {{ graph|safe }}
+    </div>
+    {% endif %}
+
+    <script type="text/javascript">
+      // TODO: 1. automatical reload timer
+      console.log("current url:", window.location.href);
+      // if it is not in live mode, ignore
+      //  setTimeout(function(){
+      //     window.location.reload(true);
+      // }, 5*1000); //5s
+      // 2. add some customized menus for Chart, using react possible?
+    </script>
+  </body>
 </html>
