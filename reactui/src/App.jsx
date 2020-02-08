@@ -7,6 +7,7 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
+  // const handleClick2 = () => {};
   function handleClick() {
     console.log(
       `You are running this application in ${process.env.NODE_ENV} mode.`

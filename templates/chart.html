@@ -1,79 +1,75 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- material-ui part -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
 
-  <!-- material-ui part -->
-  <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  />
-  <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  />
+    {% load static %}
 
-  {% load static %}
+    <title>Plotly Chart</title>
 
-  <title>I come from template!!</title>
-
-  <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
 
-  <script
-  crossorigin
-  src="https://unpkg.com/react@16/umd/react.production.min.js"
-  ></script>
-  <script
-  crossorigin
-  src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
-  ></script>
-  <script
-  crossorigin
-  src="https://unpkg.com/babel-standalone@latest/babel.min.js"
-  ></script>
+    <!-- <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/babel-standalone@latest/babel.min.js"
+    ></script> -->
 
-  <!-- semantic-ui part -->
-  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui-react/0.81.1/semantic-ui-react.min.js"></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+    <!-- semantic-ui part -->
+    <!-- <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui-react/0.81.1/semantic-ui-react.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link> -->
 
-  <style>
-    body {
-      background-color: lightyellow;
-    }
+    <style>
+      body {
+        background-color: lightyellow;
+      }
 
-    em {
-      color: LightSeaGreen;
-    }
-  </style>
-</head>
+      em {
+        color: LightSeaGreen;
+      }
+    </style>
+  </head>
 
-<body>
-  <h1>Plotly Python Chart!</h1>
+  <body>
+    <h1>Plotly Python Chart!</h1>
 
-  <div id="root">
-  </div>
-  <script src="{% static 'js/app.jsx' %}" type="text/babel"></script>
+    <div id="root"></div>
+    <script src="{% static 'js/main.js' %}"></script>
 
-  {% if graph %}
-  <div style="width:600;height:500">
-    {{ graph|safe }}
-  </div>
-  {% endif %}
+    {% if graph %}
+    <div style="width:600;height:500">
+      {{ graph|safe }}
+    </div>
+    {% endif %}
 
-  <script type="text/javascript">
-    // TODO: 1. automatical reload timer
-    console.log("current url:", window.location.href);
-    // if it is not in live mode, ignore 
-    //  setTimeout(function(){
-    //     window.location.reload(true);
-    // }, 5*1000); //5s
-    // 2. add some customized menus for Chart, using react possible?
-  </script>
-
-</body>
-
+    <script type="text/javascript">
+      // TODO: 1. automatical reload timer
+      console.log("current url:", window.location.href);
+      // if it is not in live mode, ignore
+      //  setTimeout(function(){
+      //     window.location.reload(true);
+      // }, 5*1000); //5s
+      // 2. add some customized menus for Chart, using react possible?
+    </script>
+  </body>
 </html>
