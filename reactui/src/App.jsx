@@ -8,6 +8,23 @@ function App() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
+    console.log(
+      `You are running this application in ${process.env.NODE_ENV} mode.`
+    );
+
+    const hostname = window.location.hostname; //localhost
+    console.log("window.location.hostname:", window.location.hostname); // href
+
+    const timeParameters = "?time1=10&time2=20";
+    const djangoURL = `http://${hostname}:8000/chart/mode1${timeParameters}`;
+    const debugReactURL = `http://${hostname}:3000${timeParameters}`;
+    if (process.env.NODE_ENV === "development") {
+      window.open(djangoURL);
+      window.location.href = debugReactURL;
+    } else {
+      window.location.href = djangoURL;
+    }
+
     setCount(count + 1);
   }
 
@@ -17,7 +34,6 @@ function App() {
       <Button onClick={handleClick} variant="contained" color="primary">
         Click me
       </Button>
-      You are running this application in <b>{process.env.NODE_ENV}</b> mode.
     </div>
   );
 }

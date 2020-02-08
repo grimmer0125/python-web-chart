@@ -18,6 +18,7 @@ import plotly.graph_objs as go
 #         'musics': musics,
 #     })
 
+
 def hello(request):
     return render(request, 'hello_world.html', {
         'current_time': str(datetime.now()),
@@ -34,36 +35,59 @@ class ChartView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ChartView, self).get_context_data(**kwargs)
+        # print(f"Hello, {name}. You are {age}.")
+        if "time1" in self.request.GET:
+            print(self.request.GET["time1"])
+        if "time2" in self.request.GET:
+            print(self.request.GET["time2"])
+        x = [-2, 0, 4, 6, 7]
+        y = [q**2 - q + 3 for q in x]
+        trace1 = go.Scatter(x=x,
+                            y=y,
+                            marker={
+                                'color': 'red',
+                                'symbol': 104,
+                                'size': "10"
+                            },
+                            mode="lines",
+                            name='1st Trace')
 
-        x = [-2,0,4,6,7]
-        y = [q**2-q+3 for q in x]
-        trace1 = go.Scatter(x=x, y=y, marker={'color': 'red', 'symbol': 104, 'size': "10"},
-                            mode="lines",  name='1st Trace')
-
-        data=go.Data([trace1])
-        layout=go.Layout(title="Meine Daten", xaxis={'title':'x1'}, yaxis={'title':'x2'})
-        figure=go.Figure(data=data,layout=layout)
+        data = go.Data([trace1])
+        layout = go.Layout(title="Meine Daten",
+                           xaxis={'title': 'x1'},
+                           yaxis={'title': 'x2'})
+        figure = go.Figure(data=data, layout=layout)
         div = opy.plot(figure, auto_open=False, output_type='div')
 
         context['graph'] = div
 
         return context
 
-# TODO: Extract the same code of drawing charts for reuse 
+
+# TODO: Extract the same code of drawing charts for reuse
 class ChartView2(TemplateView):
     template_name = "chart.html"
 
     def get_context_data(self, **kwargs):
         context = super(ChartView2, self).get_context_data(**kwargs)
 
-        x = [-2,0,4,6,7]
-        y = [q**2-q+3 for q in x]
-        trace1 = go.Scatter(x=x, y=y, marker={'color': 'green', 'symbol': 104, 'size': "10"},
-                            mode="lines",  name='1st Trace')
+        x = [-2, 0, 4, 6, 7]
+        y = [q**2 - q + 3 for q in x]
+        trace1 = go.Scatter(x=x,
+                            y=y,
+                            marker={
+                                'color': 'green',
+                                'symbol': 104,
+                                'size': "10"
+                            },
+                            mode="lines",
+                            name='1st Trace')
 
-        data=go.Data([trace1])
-        layout=go.Layout(title="Meine Daten", xaxis={'title':'x1'}, yaxis={'title':'x2'})
-        figure=go.Figure(data=data,layout=layout)
+        data = go.Data([trace1])
+        layout = go.Layout(title="Meine Daten",
+                           xaxis={'title': 'x1'},
+                           yaxis={'title': 'x2'})
+        figure = go.Figure(data=data, layout=layout)
         div = opy.plot(figure, auto_open=False, output_type='div')
 
         context['graph'] = div
