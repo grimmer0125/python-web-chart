@@ -19,7 +19,7 @@ from django.urls import path
 # added by grimmer
 from django.conf.urls import url
 from . import view
-from .view import ChartView, ChartView2
+from .view import ChartView  #, ChartView2
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -19,6 +19,7 @@ import plotly.graph_objs as go
 #     })
 
 
+# deprecated
 def hello(request):
     return render(request, 'hello_world.html', {
         'current_time': str(datetime.now()),
