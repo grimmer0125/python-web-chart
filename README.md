@@ -26,7 +26,7 @@ Rearding building part on react side, extra steps after creating react project w
 
 ## Dev (two servers)
 
-1. Start React web server (hot reload): `yarn`, then open `http://localhost:3000` for reactui part.
+1. Start React web server (hot reload): `yarn`, then open `http://localhost:3000` for reactui part. You can set breakpoint on react code in chrome.
 2. Start the django dev server (hot reload): `python manage.py runserver` or use VSCode to launch django
 
 ### usage
@@ -40,7 +40,7 @@ Open http://localhost:3000
 
 ### usage
 
-Open http://127.0.0.1:8000/chart/mode1
+Open http://127.0.0.1:8000
 
 ## Deprecated part
 
