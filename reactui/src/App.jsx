@@ -49,7 +49,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   const [selectedDateStart, setSelectedDateStart] = React.useState(
-    new Date("2020-02-02T21:11:54")
+    new Date("2020-02-08") // "2020-02-02T21:11:54"
   );
   const [selectedDateEnd, setSelectedDateEnd] = React.useState(
     new Date("2020-02-09") //
