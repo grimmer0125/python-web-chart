@@ -17,7 +17,7 @@ function App() {
     console.log("window.location.hostname:", window.location.hostname); // href
 
     const timeParameters = "?time1=10&time2=20";
-    const djangoURL = `http://${hostname}:8000/chart/mode1${timeParameters}`;
+    const djangoURL = `http://${hostname}:8000/${timeParameters}`;
     const debugReactURL = `http://${hostname}:3000${timeParameters}`;
     if (process.env.NODE_ENV === "development") {
       window.open(djangoURL);

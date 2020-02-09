@@ -35,11 +35,10 @@ class ChartView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ChartView, self).get_context_data(**kwargs)
-        # print(f"Hello, {name}. You are {age}.")
         if "time1" in self.request.GET:
-            print(self.request.GET["time1"])
+            print("time1:" + self.request.GET["time1"])
         if "time2" in self.request.GET:
-            print(self.request.GET["time2"])
+            print("time2:" + self.request.GET["time2"])
         x = [-2, 0, 4, 6, 7]
         y = [q**2 - q + 3 for q in x]
         trace1 = go.Scatter(x=x,
@@ -64,6 +63,7 @@ class ChartView(TemplateView):
         return context
 
 
+# deprecated
 # TODO: Extract the same code of drawing charts for reuse
 class ChartView2(TemplateView):
     template_name = "chart.html"
