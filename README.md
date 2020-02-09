@@ -15,6 +15,15 @@ Use Plotly 2.7, the latest is 4.5.0.
 
 `reactui` is created by https://create-react-app.dev/ and uses react hooks, https://zh-hant.reactjs.org/docs/hooks-intro.html.
 
+Rearding building part on react side, extra steps after creating react project were done. Here is the note,
+
+1. `yarn run eject` to generate webpack config file
+2. `webpack.config.js`
+   1. `runtimeChunk: false`
+   2. comment `splitChunks`
+   3. regarding output css, `filename: "static/css/[name].css"`
+   4. regarding output js, `filename: isEnvProduction ? "static/js/[name].js"`
+
 ## Dev (two servers)
 
 1. Start React web server (hot reload): `yarn`, then open `http://localhost:3000` for reactui part.
