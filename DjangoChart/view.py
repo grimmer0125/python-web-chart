@@ -36,10 +36,10 @@ class ChartView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ChartView, self).get_context_data(**kwargs)
-        if "time1" in self.request.GET:
-            print("time1:" + self.request.GET["time1"])
-        if "time2" in self.request.GET:
-            print("time2:" + self.request.GET["time2"])
+        if "timeStart" in self.request.GET:
+            print("timeStart:" + self.request.GET["timeStart"])
+        if "timeEnd" in self.request.GET:
+            print("timeEnd:" + self.request.GET["timeEnd"])
         x = [-2, 0, 4, 6, 7]
         y = [q**2 - q + 3 for q in x]
         trace1 = go.Scatter(x=x,

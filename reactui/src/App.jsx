@@ -65,16 +65,16 @@ function App() {
     if (paths.length > 1) {
       const parameters = paths[1].split("&");
       if (parameters.length > 1) {
-        const time1 = parameters[0].split("time1=")[1];
-        const time2 = parameters[1].split("time2=")[1];
-        const dateStart = new Date(parseInt(time1));
-        const dateEnd = new Date(parseInt(time2));
+        const timeStart = parameters[0].split("timeStart=")[1];
+        const timeEnd = parameters[1].split("timeEnd=")[1];
+        const dateStart = new Date(parseInt(timeStart));
+        const dateEnd = new Date(parseInt(timeEnd));
         console.log(dateStart, dateEnd);
 
         setSelectedDateStart(dateStart);
         setSelectedDateEnd(dateEnd);
       }
-      // http://localhost:3000/?time1=1408367514000&time2=1409317860000
+      // http://localhost:3000/?timeStart=1408367514000&timeEnd=1409317860000
     }
   }, []);
 
@@ -100,10 +100,10 @@ function App() {
     const hostname = window.location.hostname; //localhost
     console.log("window.location.hostname:", window.location.hostname); // href
 
-    const time1 = selectedDateStart.getTime();
-    const time2 = selectedDateEnd.getTime();
+    const timeStart = selectedDateStart.getTime();
+    const timeEnd = selectedDateEnd.getTime();
 
-    const timeParameters = `?time1=${time1}&time2=${time2}`;
+    const timeParameters = `?timeStart=${timeStart}&timeEnd=${timeEnd}`;
     const djangoURL = `http://${hostname}:8000/${timeParameters}`;
     const debugReactURL = `http://${hostname}:3000${timeParameters}`;
     if (process.env.NODE_ENV === "development") {
