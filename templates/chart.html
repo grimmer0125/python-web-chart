@@ -16,6 +16,8 @@
 
     {% load static %}
 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+
     <title>Plotly Chart</title>
 
     <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -39,15 +41,11 @@
     <!-- <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui-react/0.81.1/semantic-ui-react.min.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link> -->
 
-    <style>
+    <!-- <style>
       body {
         background-color: lightyellow;
       }
-
-      em {
-        color: LightSeaGreen;
-      }
-    </style>
+    </style> -->
   </head>
 
   <body>
@@ -57,7 +55,7 @@
     <script src="{% static 'js/main.js' %}"></script>
 
     {% if graph %}
-    <div style="width:600;height:500">
+    <div style="border-style: solid;border-color:darkolivegreen">
       {{ graph|safe }}
     </div>
     {% endif %}
